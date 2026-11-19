@@ -1,27 +1,38 @@
-#!/usr/bin/env python3
-"""news-image-20261119 entry (Python 3.13, standard library only).
+"""Thursday 19 November 2026 front page: hand the rendered PNG to the grader.
 
-The entry image is the entry.png beside this file; the program copies it
-to /output/entry.png. The image itself was drawn by draw.py in this
-repository (Pillow, flat procedural art, no copied photograph): a dense
-broadsheet front page for Thursday 19 November 2026 -- a navy masthead,
-3 illustrated hero cards, 8 illustrated medium cards, a by-the-numbers
-strip, a dotted world map with 12 numbered pins, a numbered list of the
-rest of the day, a timeline strip, and a sources footer: 50 verified
-stories in all.
-
-The image is fully pre-rendered, so the copy is byte-identical on every
-run: the grader's two runs write the same bytes.
-
-Run it with:  mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
+This file is the whole program the grader executes. It does no drawing and
+needs no network: the picture already lives in the repository as entry.png
+(it was painted ahead of time by draw.py, which uses Pillow to draw a
+broadsheet of the day's news). All this file does is read those bytes,
+confirm they really are a PNG, and drop an identical copy where the grader
+looks for it. The output directory comes from MAKEFUN_OUTPUT_DIR and falls
+back to /output when that variable is absent. Because the bytes are copied
+verbatim, running the program twice writes identical files.
 """
-import os
-import shutil
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-OUT_DIR = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
+from os import environ
+from pathlib import Path
+import hashlib
+import sys
 
-os.makedirs(OUT_DIR, exist_ok=True)
-shutil.copyfile(os.path.join(HERE, "entry.png"),
-                os.path.join(OUT_DIR, "entry.png"))
-print("wrote", os.path.join(OUT_DIR, "entry.png"))
+MAGIC = bytes((0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A))
+
+
+def run() -> int:
+    here = Path(__file__).resolve().parent
+    picture = here / "entry.png"
+    payload = picture.read_bytes()
+    if payload[: len(MAGIC)] != MAGIC:
+        print("entry.png does not start with the PNG magic bytes", file=sys.stderr)
+        return 1
+    target_dir = Path(environ.get("MAKEFUN_OUTPUT_DIR") or "/output")
+    target_dir.mkdir(parents=True, exist_ok=True)
+    target = target_dir / "entry.png"
+    target.write_bytes(payload)
+    digest = hashlib.sha256(payload).hexdigest()
+    print(f"wrote {target} ({len(payload)} bytes, sha256 {digest[:16]})")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(run())
