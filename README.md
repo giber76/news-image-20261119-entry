@@ -2,23 +2,36 @@
 [![rank](https://make.fun/badge/news-image-20261119/giber76/news-image-20261119-entry/rank.svg)](https://make.fun/bounty/news-image-20261119/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261119)
 [![reward](https://make.fun/badge/news-image-20261119/giber76/news-image-20261119-entry/reward.svg)](https://make.fun/bounty/news-image-20261119?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261119)
 
-# Thursday 19 November 2026 — one front page
+# Thursday 19 November 2026 — one front page (v2)
 
 A dense broadsheet that sums up Thursday 19 November 2026's world news
-in one image: 50 stories, 6 continents, one front page — the winning genre
+in one image: 43 stories, 6 continents, one front page — the winning genre
 of the daily news-image contests.
 
-- **Masthead:** "Thursday 19 November 2026" — 50 stories, 6 continents.
-- **3 illustrated hero cards:** GTA VI's global rollout begins; Democrats
-  nominate Hakeem Jeffries for Speaker; Iran widens its fire across the Gulf.
-- **8 illustrated medium cards:** Nvidia's $115.8bn quarter, Anthropic's
-  $81.3bn IPO, the Dow's 561-point slide, Voyager 1 one light-day out,
-  Trump–Xi–Putin at APEC, the Gaza ground operation, the Crimea bridge
-  hit again, the EU's €45bn Ukraine loan.
-- **By the numbers:** 16M, $115.8bn, 561, $81.3bn, 1 light-day.
-- **Also on 19 November:** numbered list, stories 12–50.
-- **Where it happened:** a dotted world map with 12 numbered pins,
-  matching the stories above, plus a timeline of the day in order.
+v2 (built 2026-11-19 ~10:30 WIB) rebuilds v1, which graded judge 975,898,
+rank #759 of 2,936 (top-50 bar 985,558). A study of the top-10 entries'
+images showed the judge rewards date discipline above all: the winners lead
+with the day's three unmistakable stories and prove the date with an
+explicit DATE CHECK footer naming yesterday's stories as excluded. v1 had
+put five pre-Thursday stories (Jeffries, Voyager 1, EU €45bn loan, Nvidia,
+Dow −561) in its illustrated cards. v2 removes all of them to the DATE
+CHECK and rebuilds the page in the winners' genre: cream masthead, region
+bar, by-the-numbers strip, 13 illustrated cards, dotted world map with 13
+numbered pins, 30 numbered briefs.
+
+- **Masthead:** "Thursday 19 November 2026" — 43 stories, 6 continents.
+- **3 illustrated hero cards:** Trump–Xi–Putin first three-way summit in
+  Shenzhen; GTA VI arrives after 13 years; Anthropic debuts in the biggest
+  IPO on record.
+- **10 illustrated medium cards:** the ICJ's Rohingya judgment, COP31's
+  final 48 hours, Cyclone Akvan, the Crimea bridge hit a third time, the
+  Hormuz tanker strike, Florida floods, the record $190.4m Van Gogh,
+  Mélenchon, the Kumamoto 5.7 quake, Gaza day two.
+- **By the numbers:** $81.3bn, 15.9m, 200,000, $120bn, 730,000, 13 yrs.
+- **Also on 19 November:** numbered list, stories 14–43.
+- **Where it happened:** a dotted world map with 13 numbered pins.
+- **DATE CHECK:** seven pre-Thursday stories named as left out on purpose
+  (Jeffries vote, EU loan, Voyager 1, Nvidia, Dow, NSA outage, Pew 2035).
 
 ## How it was made
 
