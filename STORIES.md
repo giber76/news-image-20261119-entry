@@ -64,7 +64,7 @@ $83 Wed evening; first TRADES are Thursday, which is what card 3 says.
 16. CANBERRA — Australia sanctions Israeli settlers. Canberra acts
     against settlers over West Bank expansion.
 
-## Also on Thursday (34 briefs, 17–50)
+## Also on Thursday (44 briefs, 17–60)
 17. Ted Lieu wins caucus chair (Washington)
 18. Carney rethinks China ties (Ottawa)
 19. Modi meets William and Kate (London)
@@ -100,9 +100,44 @@ $83 Wed evening; first TRADES are Thursday, which is what card 3 says.
 49. Gulf leaders: don't strike Iran (Riyadh)
 50. EU pauses long-term UK talks (Brussels)
 
-Regions (computed from the story data, shown on the bar): Europe 11 ·
-Americas 12 · Asia-Pacific 11 · Mideast 4 · Africa 5 · Oceania 4 ·
-World 3 = 50.
+## v4 — ten more verified Thursday stories (51–60, briefs)
+51. IAEA: Iran uranium unverifiable (Vienna) — IAEA Board, Roman Report
+    Nov 19 edition
+52. Kuwait says it repelled Iranian attack (Kuwait City) — Roman Report
+    Nov 19 edition
+53. Iran agent jailed over Trump plot (Washington) — 27+ years, Roman
+    Report Nov 19 edition
+54. EU backs Indonesia trade pact (Brussels) — News Media House, Nov 19
+55. MPs grill minister over Sözcü raid (Ankara) — the raid itself was
+    Tue 17 Nov; the parliamentary confrontation is Thu 19 Nov (Nexus
+    Europa, published 2026-11-19T05:28Z)
+56. US envoys meet Putin in Kremlin (Moscow) — Witkoff/Kushner, Thu 19
+    Nov (Reuters via Jingletree, published 2026-11-19)
+57. Isolated Awa make rare contact (Maranhão) — One Turn, Thursday
+    19 Nov section
+58. 1 in 4 children in conflict zones (Geneva) — UN report, One Turn,
+    Thursday 19 Nov section
+59. Qantas unveils new livery (Sydney) — Kalgoorlie Miner, Thu 19 Nov
+60. Burkina Faso targets critics (Ouagadougou) — VoxOrb, Nov 19 05:45
+
+Rejected for v4 (first reported BEFORE Thursday, so NOT news): Turkey's
+Sözcü TV seizure (raid Tue 17 Nov — only the Thu parliamentary row
+counts); the Russia–Ukraine prisoner swap (agreed in Abu Dhabi Wed
+11 Nov — only the Thu Kremlin envoy meeting counts).
+
+Regions (computed from the story data, shown on the bar): Europe 15 ·
+Americas 14 · Asia-Pacific 11 · Mideast 5 · Africa 6 · Oceania 5 ·
+World 4 = 60.
+
+## v4 fix (Giber's catch, 2026-11-19 ~13:40 WIB)
+v3's card #9 (Florida flood) houses drew above their card and covered
+lead #4's (World Court) deck — "genocide" printed as "...cide ruling".
+Root cause: pic_flood used unscaled absolute house heights in a 52px
+box. v4 renders every picture onto its own layer and pastes it
+(paint_pic), so no picture can draw outside its box, and scales the
+medium pictures' absolute sizes (flood houses, climate globe, cyclone
+arcs, Kyiv towers) to fit. Medium cards narrowed 163→162px so the last
+column no longer overflows the page.
 
 ## UTC timeline
 Overnight — Crimea bridge span hit in the night · ~06:00 UTC — Akvan:

@@ -1,10 +1,16 @@
 #!/usr/bin/env python3
-"""Thursday 19 November 2026 front page, v3 (1024x1024, Pillow).
+"""Thursday 19 November 2026 front page, v4 (1024x1024, Pillow).
 
-v3 rebuild after v1 graded 975,839 (#1,125 of 4,363; top-50 bar 986,994)
-and v2 was shown to Giber but not approved for submit. Two winner studies
-drive this version:
+v4: Giber spotted a real defect in v3 — the Florida houses in pic_flood
+drew above their card and covered lead #4's deck ("genocide" -> "...cide
+ruling"). Fix: every picture is now rendered onto its own layer and pasted
+(paint_pic), so no picture can ever draw outside its box; the medium
+pictures' unscaled absolute sizes (flood houses, climate globe, cyclone
+arcs, Kyiv towers) are scaled to fit the 52px box; the medium row width
+is fixed (162px cards, no page overflow). v4 also adds ten more verified
+Thursday stories as briefs, taking the total to 60.
 
+v3 background (kept):
 * The 20261119 dev board top 4 (artifact images fetched from make.fun and
   read): cream broadsheet, big serif date headline, region bar, 3 lead
   cards + 10 medium cards, dotted map, briefs, DATE CHECK box. v2 copied
@@ -107,6 +113,20 @@ def paint_lines(d, x, y, text, f, max_w, fill, gap=None, limit=None):
 
 def frame(d, box, fill=None, edge=None, width=1, radius=6):
     d.rounded_rectangle(box, radius=radius, fill=fill, outline=edge, width=width)
+
+
+def paint_pic(img, box, pic):
+    """Render a picture onto its own layer and paste it, so no picture can
+    ever draw outside its box. v3 bug: the Florida houses in pic_flood drew
+    above their box and covered lead #4's deck ("genocide" -> "...cide").
+    The layer confines every picture to its own card, whatever its
+    internal coordinates do."""
+    x0, y0, x1, y1 = box
+    w, h = int(x1 - x0), int(y1 - y0)
+    layer = Image.new("RGB", (w, h), (255, 255, 255))
+    ld = ImageDraw.Draw(layer)
+    pic(ld, (0, 0, w, h))
+    img.paste(layer, (int(x0), int(y0)))
 
 
 # ------------------------------------------------------------------ world map
@@ -378,11 +398,13 @@ def pic_climate(d, box):
     x0, y0, x1, y1 = box
     s = (y1 - y0) / 100.0
     paint_sun(d, x1 - 26, y0 + 20, 13)
-    gx, gy, gr = x0 + 42, y0 + 48 * s, 30
+    gx, gy, gr = x0 + 42, y0 + 48 * s, 30 * s
     d.ellipse([gx - gr, gy - gr, gx + gr, gy + gr], fill=(60, 130, 190),
               outline=(30, 90, 150), width=2)
-    d.ellipse([gx - 16, gy - 18, gx + 2, gy + 2], fill=(70, 160, 90))
-    d.ellipse([gx + 4, gy + 6, gx + 22, gy + 22], fill=(70, 160, 90))
+    d.ellipse([gx - 16 * s, gy - 18 * s, gx + 2 * s, gy + 2 * s],
+              fill=(70, 160, 90))
+    d.ellipse([gx + 4 * s, gy + 6 * s, gx + 22 * s, gy + 22 * s],
+              fill=(70, 160, 90))
     tx = x1 - 44
     d.line([(tx, y1 - 8 * s), (tx, y0 + 26 * s)], fill=(240, 240, 240), width=3)
     hx, hy = tx, y0 + 26 * s
@@ -399,12 +421,13 @@ def pic_cyclone(d, box):
     x0, y0, x1, y1 = box
     s = (y1 - y0) / 100.0
     cx, cy = (x0 + x1) / 2 - 10, (y0 + y1) / 2 - 4 * s
-    for r0 in (8, 18, 28):
+    for r0 in (8 * s, 18 * s, 28 * s):
         d.arc([cx - r0, cy - r0, cx + r0, cy + r0], 20, 300,
               fill=(255, 255, 255), width=3)
-        d.arc([cx - r0 - 6, cy - r0 - 6, cx + r0 + 6, cy + r0 + 6], 200, 120,
-              fill=(200, 220, 240), width=2)
-    d.ellipse([cx - 7, cy - 7, cx + 7, cy + 7], fill=(255, 220, 90))
+        d.arc([cx - r0 - 6 * s, cy - r0 - 6 * s, cx + r0 + 6 * s,
+               cy + r0 + 6 * s], 200, 120, fill=(200, 220, 240), width=2)
+    er = 7 * s
+    d.ellipse([cx - er, cy - er, cx + er, cy + er], fill=(255, 220, 90))
     for rx in range(int(x0) + 8, int(x1) - 4, 16):
         d.line([(rx, y0 + 8), (rx - 4, y0 + 20)], fill=(180, 200, 220), width=2)
     d.rectangle([x0, y1 - 18 * s, x1, y1], fill=(25, 80, 130))
@@ -420,7 +443,8 @@ def pic_kyiv(d, box):
     # Kyiv skyline: domes + towers, Ukrainian flag band
     d.rectangle([x0, y0 + 52 * s, x1, y1], fill=(70, 70, 90))
     paint_towers(d, (x0, y0 + 20 * s, x1, y0 + 52 * s), y0 + 52 * s,
-                 [20, 32, 16, 28], (50, 50, 70), win=(255, 220, 120))
+                 [20 * s, 32 * s, 16 * s, 28 * s], (50, 50, 70),
+                 win=(255, 220, 120))
     for fx in (x0 + 40, x0 + 100):
         d.ellipse([fx - 10, y0 + 30 * s, fx + 10, y0 + 52 * s],
                   fill=(220, 190, 80))
@@ -457,20 +481,25 @@ def pic_flood(d, box):
     paint_sky(d, box, (140, 160, 180), (190, 200, 210))
     x0, y0, x1, y1 = box
     s = (y1 - y0) / 100.0
+    # rain streaks in the top strip
     for rx in range(int(x0) + 6, int(x1) - 4, 14):
-        d.line([(rx, y0 + 6), (rx - 3, y0 + 18)], fill=(120, 140, 160), width=2)
-    for hx, hw, hh in [(x0 + 12, 44, 34), (x0 + 66, 52, 42), (x0 + 128, 40, 30)]:
-        d.rectangle([hx, y0 + 46 * s - hh, hx + hw, y0 + 46 * s],
-                    fill=(210, 190, 160))
-        d.polygon([(hx - 4, y0 + 46 * s - hh), (hx + hw + 4, y0 + 46 * s - hh),
-                   (hx + hw / 2, y0 + 46 * s - hh - 16)], fill=(150, 60, 50))
-    d.rectangle([x0, y0 + 46 * s, x1, y1], fill=(70, 120, 160))
-    for i in range(4):
-        yy = y0 + 56 * s + i * 10 * s
+        d.line([(rx, y0 + 4), (rx - 3, y0 + 12)], fill=(120, 140, 160), width=2)
+    # low red sun, top left, clear of the houses
+    d.ellipse([x0 + 4, y0 + 4, x0 + 14, y0 + 14], fill=(200, 60, 50))
+    # three houses on the waterline; heights scaled so the tallest roof
+    # stays inside the box (v3 used unscaled heights and the roofs drew
+    # above the card, covering lead #4's deck)
+    wt = y0 + 60 * s
+    for hx, hw, hh in [(x0 + 8, 42, 17), (x0 + 58, 48, 21), (x0 + 110, 38, 15)]:
+        top = wt - hh
+        d.rectangle([hx, top, hx + hw, wt], fill=(210, 190, 160))
+        d.polygon([(hx - 3, top), (hx + hw + 3, top),
+                   (hx + hw / 2, top - 8)], fill=(150, 60, 50))
+    d.rectangle([x0, wt, x1, y1], fill=(70, 120, 160))
+    for i in range(3):
+        yy = wt + 6 + i * 6
         d.line([(x0 + 6 + (i % 2) * 20, yy), (x1 - 10 - (i % 2) * 14, yy)],
                fill=(160, 200, 230), width=2)
-    d.pieslice([x0 + 84, y0 + 44 * s, x0 + 116, y0 + 56 * s], 180, 360,
-               fill=(200, 60, 50))
 
 
 def pic_science(d, box):
@@ -519,15 +548,19 @@ def pic_saudi(d, box):
     paint_sky(d, box, (30, 50, 80), (70, 100, 140))
     x0, y0, x1, y1 = box
     s = (y1 - y0) / 100.0
-    # radar sweep + intercept flash, city below
+    # radar sweep + intercept flash, city below (radii scaled to the box;
+    # v3 used unscaled radii and the largest circle was cut at the top)
     cx, cy = (x0 + x1) / 2, y0 + 40 * s
-    for r in (12, 22, 32):
+    for r in (12 * s, 22 * s, 32 * s):
         d.ellipse([cx - r, cy - r, cx + r, cy + r], outline=(120, 200, 160),
                   width=1)
-    d.line([(cx, cy), (cx + 26, cy - 18)], fill=(120, 220, 160), width=2)
-    d.ellipse([cx + 22, cy - 22, cx + 30, cy - 14], fill=(255, 220, 90))
+    d.line([(cx, cy), (cx + 26 * s, cy - 18 * s)], fill=(120, 220, 160),
+           width=2)
+    d.ellipse([cx + 22 * s, cy - 22 * s, cx + 30 * s, cy - 14 * s],
+              fill=(255, 220, 90))
     paint_towers(d, (x0, y0 + 62 * s, x1, y1 - 8 * s), y1 - 8 * s,
-                 [18, 26, 14, 22], (30, 45, 70), win=(255, 220, 120))
+                 [18 * s, 26 * s, 14 * s, 22 * s], (30, 45, 70),
+                 win=(255, 220, 120))
     f = mk_font(SANSB, max(9, int(12 * s)))
     d.text((x0 + 28, y0 + 6 * s), "ALL-CLEAR", font=f, fill=(140, 230, 170))
 
@@ -714,6 +747,17 @@ BRIEFS = [
     ("NAIROBI", "Kenya floods kill six"),
     ("RIYADH", "Gulf leaders: don't strike Iran"),
     ("BRUSSELS", "EU pauses long-term UK talks"),
+    # v4: ten more verified Thursday stories (51-60), added as briefs
+    ("VIENNA", "IAEA: Iran uranium unverifiable"),
+    ("KUWAIT CITY", "Kuwait repelled Iran attack"),
+    ("WASHINGTON", "Iran agent jailed over Trump plot"),
+    ("BRUSSELS", "EU backs Indonesia trade pact"),
+    ("ANKARA", "MPs grill minister over Sözcü raid"),
+    ("MOSCOW", "US envoys meet Putin in Kremlin"),
+    ("MARANHAO", "Isolated Awa make rare contact"),
+    ("GENEVA", "1 in 4 children in conflict zones"),
+    ("SYDNEY", "Qantas unveils new livery"),
+    ("OUAGADOUGOU", "Burkina Faso targets critics"),
 ]
 
 TIMELINE = [
@@ -763,6 +807,9 @@ def region_counts():
         "MARKETS": "WORLD", "CHENNAI": "ASIA", "TOKYO": "ASIA",
         "BAGHDAD": "MIDEAST", "CARACAS": "AMERICAS", "MANAMA": "MIDEAST",
         "SACRAMENTO": "AMERICAS", "RIYADH": "MIDEAST", "BRUSSELS": "EUROPE",
+        "VIENNA": "EUROPE", "KUWAIT CITY": "MIDEAST", "ANKARA": "EUROPE",
+        "MOSCOW": "EUROPE", "MARANHAO": "AMERICAS", "GENEVA": "WORLD",
+        "OUAGADOUGOU": "AFRICA",
     }
     for place, _ in BRIEFS:
         counts[city_region[place]] += 1
@@ -770,13 +817,13 @@ def region_counts():
 
 
 # ------------------------------------------------------------------ layout
-def lead_panel(d, box, num, region, kicker, headline, deck, source, pic):
+def lead_panel(img, d, box, num, region, kicker, headline, deck, source, pic):
     x0, y0, x1, y1 = box
     frame(d, box, fill=(255, 255, 255), edge=RULE, width=1, radius=6)
     d.rectangle([x0, y0, x1, y0 + 2], fill=RED)
     pad = 9
     ih = 100
-    pic(d, (x0 + 1, y0 + 3, x1 - 1, y0 + 3 + ih))
+    paint_pic(img, (x0 + 1, y0 + 3, x1 - 1, y0 + 3 + ih), pic)
     ty = y0 + 3 + ih + 5
     kf = mk_font(SANSB, 10)
     d.text((x0 + pad, ty), kicker, font=kf, fill=RED)
@@ -800,13 +847,13 @@ def lead_panel(d, box, num, region, kicker, headline, deck, source, pic):
            fill=(255, 255, 255))
 
 
-def medium_card(d, box, num, region, kicker, headline, deck, source, pic):
+def medium_card(img, d, box, num, region, kicker, headline, deck, source, pic):
     x0, y0, x1, y1 = box
     frame(d, box, fill=(255, 255, 255), edge=RULE, width=1, radius=5)
     d.rectangle([x0, y0, x1, y0 + 2], fill=RED)
     pad = 7
     ih = 52
-    pic(d, (x0 + 1, y0 + 3, x1 - 1, y0 + 3 + ih))
+    paint_pic(img, (x0 + 1, y0 + 3, x1 - 1, y0 + 3 + ih), pic)
     ty = y0 + 3 + ih + 3
     kf = mk_font(SANSB, 8)
     d.text((x0 + pad, ty), kicker, font=kf, fill=RED)
@@ -833,7 +880,7 @@ def build():
     # ---- masthead
     f = mk_font(SANSB, 11)
     d.text((10, 6), "ONE DAY OF WORLD NEWS, ONE PICTURE", font=f, fill=RED)
-    t = "50 STORIES  ·  7 REGIONS  ·  EVERY ONE FROM THIS THURSDAY"
+    t = "60 STORIES  ·  7 REGIONS  ·  EVERY ONE FROM THIS THURSDAY"
     d.text((W - 10 - d.textlength(t, font=f), 6), t, font=f, fill=RED)
     f = mk_font(SERIFB, 46)
     t = "Thursday 19 November 2026"
@@ -863,9 +910,9 @@ def build():
 
     # ---- region bar (counts computed from the story data)
     counts = region_counts()
-    assert sum(counts.values()) == 50, counts
+    assert sum(counts.values()) == 60, counts
     y0 = 136
-    total = 50
+    total = 60
     x = 10
     f = mk_font(SANSB, 10)
     order = ["EUROPE", "AMERICAS", "ASIA", "MIDEAST", "AFRICA", "OCEANIA",
@@ -887,18 +934,18 @@ def build():
     lw, lgap = 245, 8
     for i, (region, k, h, deck, src, pic) in enumerate(LEADS):
         x0 = 10 + i * (lw + lgap)
-        lead_panel(d, (x0, 160, x0 + lw, 360), i + 1, region, k, h, deck,
+        lead_panel(img, d, (x0, 160, x0 + lw, 360), i + 1, region, k, h, deck,
                    src, pic)
 
     # ---- twelve medium cards, two rows of six
-    mw, mgap = 163, 8
+    mw, mgap = 162, 8
     for row in range(2):
         for col in range(6):
             idx = row * 6 + col
             region, k, h, deck, src, pic = MEDIUM[idx]
             x0 = 10 + col * (mw + mgap)
             y0 = 368 + row * 140
-            medium_card(d, (x0, y0, x0 + mw, y0 + 134), 5 + idx, region, k,
+            medium_card(img, d, (x0, y0, x0 + mw, y0 + 134), 5 + idx, region, k,
                         h, deck, src, pic)
 
     # ---- bottom: map (left) + briefs (right)
@@ -934,12 +981,12 @@ def build():
     d.text((350, y0 + 8), "ALSO ON THURSDAY 19 NOVEMBER", font=f, fill=NAVY)
     d.line([(350, y0 + 28), (1002, y0 + 28)], fill=RULE, width=1)
     f = mk_font(SANS, 9)
-    per_col = 12
+    per_col = 15
     for i, (place, item) in enumerate(BRIEFS):
         col = i // per_col
         row = i % per_col
         x = 350 + col * 222
-        yy = y0 + 34 + row * 21
+        yy = y0 + 34 + row * 16
         num = str(17 + i) + "."
         fn = mk_font(SANSB, 9)
         d.text((x, yy), num, font=fn, fill=RED)
