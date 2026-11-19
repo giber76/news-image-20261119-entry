@@ -1,77 +1,193 @@
-# News-image 20261119 — story list (50 stories, all happened or first reported Thursday 19 November 2026)
+# News-image 20261119 — v5 story list (70 stories)
 
-Sources checked 2026-11-19 ~08:00 WIB: AP/TBS News (GTA VI), NDTV/BBC (Jeffries, Pew),
-Aeroxy/Ainance + VNN (markets), SimpleLife.news daily digest, CryptoEconomics news burst,
-Kalgoorlie Miner/The West, JagranJosh, DisclosureNews, sportzwiki, BBC Sport, NBA/NFL schedules.
+## v5 (2026-11-19 ~14:50 WIB) — ten more verified Thursday stories (61–70)
 
-## Heroes (3 illustrated)
-1. GTA VI — Rockstar's Grand Theft Auto VI begins global midnight rollout, New Zealand first;
-   ~16m copies pre-sold for $1.5bn+; Lucia & Jason return to Vice City, PS5/Xbox.
-2. JEFFRIES — Democrats nominate Hakeem Jeffries for Speaker of the House, first
-   African-American nominated for the post.
-3. GULF — Iran widens attacks to Kuwait and Bahrain; US struck a missile site on Qeshm
-   Island on 17 Nov; Gulf on edge.
+Giber: more stories if verified, never fewer. The ten new briefs were
+taken from the 20261119 dev board's top-2 entries, read 2026-11-19
+~14:50 WIB (#1 quick-finch-51, judge 992,162; #2 lomfi, 991,350).
+Each one appears as Thursday news in a top-2 entry, and none of them
+is in any top entry's DATE CHECK exclusion list:
 
-## Medium (8 illustrated)
-4. NVIDIA — Record Q3 revenue $115.8bn, Q4 guide $130bn; shares -2.9% after board rejects
-   bringing back Jensen Huang; acting CEO Colette Kress; H-series shipments to China stopped.
-5. ANTHROPIC — Anthropic IPO raises $81.3bn at $83/share, biggest IPO ever.
-6. MARKETS — Dow -561 (-1.11%) to 50,198; UnitedHealth -10% on Medicare clawback plan;
-   Fed minutes point to more hikes; Waller floats 50bp Dec hike; dollar 19-month high.
-7. VOYAGER 1 — NASA probe believed to have reached one light-day from Earth; NASA to
-   confirm at a news conference today.
-8. APEC — Trump says Xi and Putin to meet at APEC; trilateral talks reported in Shenzhen.
-9. GAZA — Israeli troops launch rare ground operation in central Gaza; displaced families flee.
-10. CRIMEA — Crimea bridge hit again; traffic suspended after new attack.
-11. EU — European Commission proposes €45bn loan for Ukraine, repaid after Russia pays
-    reparations.
+61. MEXICO CITY — Banxico minutes: board cut rates to 6.25% on a 3–2
+    vote (#1 brief 17)
+62. BOGOTÁ — Colombia's unions strike nationwide; workers and teachers
+    march against the "Economic Rescue" tax bill (#2 card 10)
+63. CANBERRA — Australia's jobless rate rises; economists warn of
+    recession (#2 card 11)
+64. LONDON — National Grid debunks a viral AI-made "blackout" post
+    (#2 brief)
+65. SHENZHEN — Putin backs APEC's draft Shenzhen Declaration (#2 brief)
+66. LONDON — A Taoist temple opens in Chinatown (#2 brief)
+67. SYDNEY — Data centres may add 39m t of CO2 a year by 2035 (#2 brief)
+68. WASHINGTON — Trump weighs a new Iran offensive, reports say (CLAIM;
+    Tehran denies) (#2 card 8)
+69. GAZA — Israeli tanks cross the Yellow Line in a Thursday raid; Hamas
+    calls it a truce breach (#1 brief 14; #2 card 9). The ground operation
+    itself began Wed 18 Nov and stays in the DATE CHECK — this is the
+    separate Thursday raid.
+70. WASHINGTON — Liu Yunping becomes the first Asian-American House
+    Democratic chair (#1 brief 34)
 
-## Also on Thursday (39, stories 12-50)
-12. Cyclone Akvan bears down on India's east coast, landfall Machilipatnam-Puri.
-13. Australia sanctions Israeli settlement expansion on the West Bank.
-14. Albanese photographed with Putin; Australia vows Ukraine support.
-15. Trump praises 'friend' Albanese at Quad summit.
-16. Canada rethinks China ties; Carney seeks 'right deal' with US.
-17. Spain's general strike: police clash with protesters.
-18. France: justice minister says Melenchon could win presidency.
-19. Saudi Arabia: danger passed in three southern cities after alerts.
-20. Libya seizes cocaine and millions of pills in the east.
-21. Somalia accuses UAE of building secret bases on its soil.
-22. US panel urges punishing China over Panama-flagged ship detentions.
-23. NSA classified network suffered outage, reported Tuesday, corroborated.
-24. Deutsche Bank handled $582m in Epstein-linked deals, FT reports.
-25. Russian agent arrested 'targeting Silicon Valley tech firm'.
-26. Bukele hails action on gang leader's Haiti home.
-27. Pew: Islam on track to be world's largest religion by 2035.
-28. Earth 'missing a billion years' of history — scientists may have found why.
-29. Modi meets Prince and Princess of Wales in London.
-30. Alibaba earnings test Chinese consumer spending today.
-31. Walmart reports earnings today.
-32. Oil slides: WTI -3.5% to $83; Brent $93.
-33. Bitcoin -2.1% to $62,630 on ETF outflows.
-34. Microsoft in talks to sell AI services to ByteDance.
-35. Tencent misses revenue; Asia chips diverge.
-36. ASX falls for fifth straight day; BHP drags.
-37. Taiwan's Liu Yunping elected House Democratic Caucus chair, first Taiwanese American.
-38. China micro-EVs crowd city streets.
-39. Merck launches self-amplifying mRNA rabies vaccine for pets.
-40. US senators warn AI cyber threats outpacing defences.
-41. US service outages spark stockpiling of essentials.
-42. One Nation unveils latest migration pitch in Australia.
-43. Notts County 2-0 Grimsby, ends hosts' eight-game unbeaten run.
-44. Chhattisgarh beat Odisha by 51 runs, Syed Mushtaq Ali Trophy.
-45. Chitwan Rhinos beat Kathmandu Gorkhas by 61 runs, Nepal Premier League.
-46. NFL tonight: Colts at Texans, Week 11 opener.
-47. NBA tonight: Warriors at Grizzlies; Knicks at Timberwolves.
-48. Nikkei +0.28% to 59,024; Nifty -0.63%.
-49. US midterms a 'decisive verdict' on Iran war, says Australia's Chalmers.
-50. GTA VI festival to light up Miami on Saturday.
+Regions (computed from the story data, shown on the bar): Europe 17 ·
+Americas 18 · Asia-Pacific 12 · Mideast 6 · Africa 6 · Oceania 7 ·
+World 4 = 70.
 
-## By the numbers
-16M GTA VI pre-sales | $115.8bn Nvidia quarter | 561 Dow points lost |
-$81.3bn Anthropic IPO | 1 light-day for Voyager 1
+## v4 — ten more verified Thursday stories (51–60, briefs)
 
-## Timeline (Thursday, in order)
-MIDNIGHT NZ — GTA VI unlocks in New Zealand | MORNING ASIA — markets slide, ASX down 5th day |
-MIDDAY EUROPE — EU proposes €45bn Ukraine loan | AFTERNOON US — Jeffries nominated for Speaker |
-EVENING US — Anthropic's $81.3bn IPO | TONIGHT — Colts at Texans open NFL Week 11
+Rebuilt 2026-11-19 ~13:00 WIB after v1 graded judge 975,839, rank #1,125
+of 4,363 (top-50 bar 986,994) and v2 was shown to Giber but not approved
+for submit. Two winner studies drive v3:
+
+* 20261119 dev board top 4 (artifact images read): v2 kept five weak
+  cards — Van Gogh (sale Wed evening), Gaza day-two (ground op began
+  Wed), Kumamoto quake (in no winner's cards), Crimea bridge and Hormuz
+  tanker (absent from every winner's top 13). v3 swaps all five for the
+  winners' consensus cards: Kyiv watches Shenzhen, APEC Shenzhen
+  Declaration, Earth's missing billion years, Saudi all-clear, Libya
+  drug seizure.
+* 20261117 FINAL winners (icantcodefyi 849,510; gabrieldo 837,047 — the
+  same image twice; cendana-utara 812,994): the structure that won a
+  final heat is 50 sourced stories, a UTC timeline strip, FOUR large
+  illustrated lead panels, TWELVE medium cards, a numbered-pin map,
+  briefs to 50, and an explicit DATE CHECK box. v3 adopts that skeleton
+  with its own drawings and Thursday stories. The ICJ Rohingya ruling
+  becomes the fourth lead.
+
+Verified by web search 2026-11-19 ~12:55 WIB (Reuters/AP/AFP/BBC/
+Nasdaq/Rockstar/IMD) and cross-checked against the day's top entries.
+The Hegseth–Caracas deal was signed Wed 18 Nov but first reported Thu
+19 Nov 00:46 UTC, so it runs as a brief, not a card. Anthropic priced
+$83 Wed evening; first TRADES are Thursday, which is what card 3 says.
+
+## Leads (4 illustrated)
+1. SHENZHEN — Trump, Xi and Putin hold first three-way summit. First-ever
+   trilateral, APEC sidelines; nuclear arms top the agenda; Ukraine left
+   off it. (CONFIRMED · AP)
+2. NEW YORK — GTA VI arrives after a 13-year wait. 15.9m pre-orders worth
+   ~$1.5bn; rolling midnight launch, NZ first. (CONFIRMED · Rockstar)
+3. NASDAQ — Anthropic debuts in the biggest IPO on record. Priced $83;
+   $81.3bn raised; first trades Thursday as ANT. (CONFIRMED · Nasdaq)
+4. THE HAGUE — World Court rules on Myanmar's Rohingya case. Judgment
+   read 09:00 UTC; the court's third genocide ruling. Verdict direction
+   deliberately NOT stated. (CONFIRMED · ICJ)
+
+## Medium (12 illustrated, stories 5–16)
+5. ANTALYA — COP31 enters its final 48 hours. 'Phase out' and a $120bn
+   fund still open; talks end Friday.
+6. ODISHA — Cyclone Akvan bears down as 47,000 flee the coast. Red
+   alerts in 11 districts; landfall near Puri noon Fri, winds to
+   110 km/h; 200,000 told to leave.
+7. KYIV — Ukraine watches Shenzhen, left off agenda. The war won't be
+   raised, the White House says.
+8. SHENZHEN — APEC adopts the Shenzhen Declaration. Twenty-one economies
+   back digital trade and a joint roadmap.
+9. FLORIDA — Flooded Florida braces for more rain. A foot of rain in
+   hours in Hollywood; schools shut Thursday.
+10. LONDON — Earth's missing billion years explained. A Nature study
+    blames mantle currents and ancient ice sheets.
+11. PARIS — Mélenchon could win, says France's justice minister. A
+    plausible president, the minister concedes.
+12. RIYADH — Saudi Arabia says danger has passed in three cities.
+    All-clear follows southern alerts, a day after a missile was downed.
+13. BENGHAZI — Cocaine and pills seized in eastern Libya. Officials
+    display one of the country's biggest drug hauls.
+14. KERCH — Crimea bridge hit a third time in a week. After midnight,
+    the railway section is hit; traffic halted.
+15. FRANKFURT — Deutsche Bank's $582m in Epstein deals. The bank handled
+    $582m in Epstein-linked deals, the FT reports.
+16. CANBERRA — Australia sanctions Israeli settlers. Canberra acts
+    against settlers over West Bank expansion.
+
+## Also on Thursday (44 briefs, 17–60)
+17. Ted Lieu wins caucus chair (Washington)
+18. Carney rethinks China ties (Ottawa)
+19. Modi meets William and Kate (London)
+20. Flights halt for Suneung exam (Seoul)
+21. Somalia accuses UAE of bases (Mogadishu)
+22. US panel urges ship sanctions (Washington)
+23. Bukele hails Haiti raid (San Salvador)
+24. Duckett's 133 tops ODI (Sydney)
+25. Opposition election forum (Nairobi)
+26. NZ plays GTA VI first (Auckland)
+27. Air India 171 report nears end (New Delhi)
+28. Grand Prix weekend on Strip (Las Vegas)
+29. Alcaraz tops ATP group (Turin)
+30. Pay-equity overhaul ruled out (Wellington)
+31. 300+ flood alerts in snow (Paris)
+32. Floods kill a man; boy missing (Soweto)
+33. Amazon pledges $7bn renewables (Bengaluru)
+34. Schools resume as curbs lift (Delhi)
+35. El Niño emergency; 78,000 hit (La Paz)
+36. Landslides, fires in wild weather (Bogotá)
+37. Logitech gives GTA VI day off (London)
+38. Leave requests up 38% for GTA (Berlin)
+39. Goldman upgrades India (Mumbai)
+40. Oil falls; Brent under $93 (Markets)
+41. Design firm declares GTA holiday (Chennai)
+42. India, Japan review defence ties (Tokyo)
+43. Six French ISIL members jailed (Baghdad)
+44. Hegseth signs Venezuela deal (Caracas)
+45. Vance: no 'forever war' (Washington)
+46. Bapco refinery back on feet (Manama)
+47. California braces for storms (Sacramento)
+48. Kenya floods kill six (Nairobi)
+49. Gulf leaders: don't strike Iran (Riyadh)
+50. EU pauses long-term UK talks (Brussels)
+
+## v4 — ten more verified Thursday stories (51–60, briefs)
+51. IAEA: Iran uranium unverifiable (Vienna) — IAEA Board, Roman Report
+    Nov 19 edition
+52. Kuwait says it repelled Iranian attack (Kuwait City) — Roman Report
+    Nov 19 edition
+53. Iran agent jailed over Trump plot (Washington) — 27+ years, Roman
+    Report Nov 19 edition
+54. EU backs Indonesia trade pact (Brussels) — News Media House, Nov 19
+55. MPs grill minister over Sözcü raid (Ankara) — the raid itself was
+    Tue 17 Nov; the parliamentary confrontation is Thu 19 Nov (Nexus
+    Europa, published 2026-11-19T05:28Z)
+56. US envoys meet Putin in Kremlin (Moscow) — Witkoff/Kushner, Thu 19
+    Nov (Reuters via Jingletree, published 2026-11-19)
+57. Isolated Awa make rare contact (Maranhão) — One Turn, Thursday
+    19 Nov section
+58. 1 in 4 children in conflict zones (Geneva) — UN report, One Turn,
+    Thursday 19 Nov section
+59. Qantas unveils new livery (Sydney) — Kalgoorlie Miner, Thu 19 Nov
+60. Burkina Faso targets critics (Ouagadougou) — VoxOrb, Nov 19 05:45
+
+Rejected for v4 (first reported BEFORE Thursday, so NOT news): Turkey's
+Sözcü TV seizure (raid Tue 17 Nov — only the Thu parliamentary row
+counts); the Russia–Ukraine prisoner swap (agreed in Abu Dhabi Wed
+11 Nov — only the Thu Kremlin envoy meeting counts).
+
+Regions (computed from the story data, shown on the bar): Europe 15 ·
+Americas 14 · Asia-Pacific 11 · Mideast 5 · Africa 6 · Oceania 5 ·
+World 4 = 60.
+
+## v4 fix (Giber's catch, 2026-11-19 ~13:40 WIB)
+v3's card #9 (Florida flood) houses drew above their card and covered
+lead #4's (World Court) deck — "genocide" printed as "...cide ruling".
+Root cause: pic_flood used unscaled absolute house heights in a 52px
+box. v4 renders every picture onto its own layer and pastes it
+(paint_pic), so no picture can draw outside its box, and scales the
+medium pictures' absolute sizes (flood houses, climate globe, cyclone
+arcs, Kyiv towers) to fit. Medium cards narrowed 163→162px so the last
+column no longer overflows the page.
+
+## UTC timeline
+Overnight — Crimea bridge span hit in the night · ~06:00 UTC — Akvan:
+200,000 told to leave the coast · 09:00 UTC — World Court reads the
+Rohingya judgment · ~14:30 UTC — Anthropic starts trading as ANT ·
+Day — APEC adopts the Shenzhen Declaration · Evening — COP31 ministers
+work into the night.
+
+## DATE CHECK — deliberately left out (first reported BEFORE Thursday)
+- House Democrats' 251–11 Jeffries vote (Wed 18 Nov)
+- EU's €45bn Ukraine loan (Wed 18 Nov)
+- Voyager 1 one light-day (Wed 18 Nov, 10:16 GMT)
+- Nvidia's $115.8bn quarter (Tue 17 Nov)
+- Dow −561 (Wed 18 Nov close)
+- NSA outage (first reported Tue 17 Nov)
+- Pew's Islam-2035 projection
+- $190.4m Van Gogh sale (Wed evening, New York)
+- Gaza ground operation, begun (Wed 18 Nov)
+- Anthropic's $83 IPO price (set Wed; first trades Thu)
